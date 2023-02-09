@@ -1,0 +1,153 @@
+{
+  "$id": "starWars_Films",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Star Wars Films",
+  "entityType": "ce_starWarsFilm",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://swapi.dev/api/films/",
+        "paginationControl": {
+          "cursorPagination": {
+            "cursor": "next",
+            "cursorType": "FULL_URL",
+            "detectCursorInHeader": false
+          }
+        },
+        "headers": {},
+        "queryParams": {
+          "v": "20230208"
+        },
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "results"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "title",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "episode_id",
+        "path": "episode_id"
+      },
+      {
+        "type": "JSON",
+        "header": "opening_crawl",
+        "path": "opening_crawl"
+      },
+      {
+        "type": "JSON",
+        "header": "director",
+        "path": "director"
+      },
+      {
+        "type": "JSON",
+        "header": "producer",
+        "path": "producer"
+      },
+      {
+        "type": "JSON",
+        "header": "release_date",
+        "path": "release_date"
+      },
+      {
+        "type": "JSON",
+        "header": "characters",
+        "path": "characters"
+      },
+      {
+        "type": "JSON",
+        "header": "planets",
+        "path": "planets"
+      },
+      {
+        "type": "JSON",
+        "header": "starships",
+        "path": "starships"
+      },
+      {
+        "type": "JSON",
+        "header": "vehicles",
+        "path": "vehicles"
+      },
+      {
+        "type": "JSON",
+        "header": "species",
+        "path": "species"
+      },
+      {
+        "type": "JSON",
+        "header": "created",
+        "path": "created"
+      },
+      {
+        "type": "JSON",
+        "header": "edited",
+        "path": "edited"
+      },
+      {
+        "type": "JSON",
+        "header": "url",
+        "path": "url"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "url"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": "https://swapi.dev/api/",
+            "ignoreCase": false
+          }
+        },
+        "replacement": ""
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "starWars_filmReleaseDate",
+      "header": "release_date",
+      "subfieldPath": []
+    },
+    {
+      "field": "starWars_filmDirector",
+      "header": "director",
+      "subfieldPath": []
+    },
+    {
+      "field": "starWars_filmProducers",
+      "header": "producer",
+      "subfieldPath": []
+    },
+    {
+      "field": "starWars_filmDescription",
+      "header": "opening_crawl",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "title",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "url",
+      "subfieldPath": []
+    }
+  ]
+}
