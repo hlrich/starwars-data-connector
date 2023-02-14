@@ -1,7 +1,0 @@
-{
-  "$id": "ce_starWarsCharacter",
-  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
-  "description": "",
-  "displayName": "Star Wars Character",
-  "pluralDisplayName": "Star Wars Characters"
-}
