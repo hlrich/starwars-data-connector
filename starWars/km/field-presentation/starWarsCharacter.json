@@ -1,0 +1,66 @@
+{
+  "$id": "ce_starWarsCharacter",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_starWarsCharacter",
+  "displayName": "Star Wars Character",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "starWars_characterHeight"
+        },
+        {
+          "id": "starWars_characterWeight"
+        },
+        {
+          "id": "starWars_characterHairColor"
+        },
+        {
+          "id": "starWars_characterSkinColor"
+        },
+        {
+          "id": "starWars_characterEyeColor"
+        },
+        {
+          "id": "starWars_characterGender"
+        },
+        {
+          "id": "starWars_characterBirthYear"
+        },
+        {
+          "id": "starWars_relatedFilms"
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        }
+      ]
+    }
+  ]
+}
